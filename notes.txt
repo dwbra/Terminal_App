@@ -1,0 +1,14 @@
+Add in a high scores component into my game. Gets the users name and then scores them in a high scores array 
+
+builds in an option to view high scores which then calls and displays that array 
+
+
+R6 - Readme.MD - have 5 dot points on each feature
+
+TO DO LIST
+1. Highscores Method
+2. Error Handling / Validation
+3. Gems Incorporation (Colorize / Find another one)
+4. Terminal Argument "--help" instruction to get help about the app. Option is to even just do a list of help options
+or definition 
+5. 
