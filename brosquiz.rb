@@ -43,10 +43,6 @@ puts "Enter your name Bro"
 @name = gets.chomp
 puts " "
 
-def highscores
-    highscores = File.read("highscores.txt")
-    
-end
 
 def run_test(questions)
     answer = ""
@@ -70,15 +66,21 @@ def run_test(questions)
     else 
         puts ("You got " + score.to_s + "/" + questions.length.to_s + "! You are a fucking legend! You have mastered the way of the bro and deserve all of the glory that Oden possesses. Beers are on me and let us bro down!")
         $name_highscores << @name
+        legends = $name_highscores
+        File.write("highscores.txt", legends.join + "\n", mode: "a") 
     end
 
-    legends = $name_highscores.to_s
-    File.write("highscores.txt", legends, mode: "a") 
-    
+    #Calling my highscores method from outside of the test method.
+    highscores()
+
+end
+
+#Highscores method to get user input and then if a user chooses display an external .txt file to show the player highscores. 
+def highscores
     puts "\nDo you want to view the legendary Bro's who've hit the highscore?\nEnter 1 to see the highscores or 0 to exit."
     view_highscores = gets.chomp()
     if view_highscores.to_i == 1
-        p File.read("highscores.txt")
+        puts File.read("highscores.txt")
     else 
         exit(0)
     end
