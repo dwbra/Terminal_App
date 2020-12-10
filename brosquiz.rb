@@ -52,15 +52,14 @@ def run_test(questions)
     for question in questions
         puts question.prompt
         answer = gets.chomp()
-        answer_invalid = Validators.validate_answer_input(answer)
-        if answer_invalid
+        answer_valid = Validators.validate_answer_input(answer)
+        if !answer_valid
                 puts " "
                 puts "Bro, how dumb are you? Enter a single letter A, B, or C to choose your answer."
                 puts " "
                 redo
         end
-
-        # system("clear")
+        system("clear")
         if answer == question.answer
             score += 1
         end

@@ -2,9 +2,21 @@
 module Validators
 
     def self.validate_answer_input(answer)
-        # answer = answer.to_s
-        if answer == "a" || answer == "A" || answer = "b" || answer = "B" || answer == "c" || answer == "C"
+        a = answer.to_s
+        if a == "a"
             return true
+        elsif a == "A"
+            return true
+        elsif a == "b"
+            return true
+        elsif a == "B"
+            return true
+        elsif a == "c"
+            return true
+        elsif a == "C"
+            return true
+        else 
+            return false
         end
     end
 end
