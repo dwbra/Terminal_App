@@ -1,9 +1,10 @@
 
 class Question 
-    attr_accessor :prompt, :answer
+    attr_accessor :prompt, :answer, :name
     def initialize(prompt, answer)
         @prompt = prompt
         @answer = answer
+        @name = name
     end
 end
 
@@ -31,18 +32,26 @@ questions = [
     Question.new(p10, "a")
 ]
 
+$name_highscores = []
+
 system("clear")
 puts "Welcome to the Bro Challenge. A test of real Broship."
 puts "Reckon you're a bro? Prove it by completing this quiz."
 puts "Each correct answer is awarded 1 point." 
 puts "The total score will be revealed at the end."
+puts "Enter your name Bro"
+@name = gets.chomp
 puts " "
 
-
+def highscores
+    highscores = File.read("highscores.txt")
+    
+end
 
 def run_test(questions)
     answer = ""
     score = 0
+
     for question in questions
         puts question.prompt
         answer = gets.chomp()
@@ -51,6 +60,7 @@ def run_test(questions)
             score += 1
         end
     end
+
     if score <= 3
         puts ("You got " + score.to_s + "/" + questions.length.to_s + "! You're pathetic! You call yourself a bro? If it were up to me you'd be left alone on a desert island for a year to learn the real meaning of the word bro.")
     elsif score <= 6
@@ -59,8 +69,19 @@ def run_test(questions)
         puts ("You got " + score.to_s + "/" + questions.length.to_s + "! You've earnt my respect. You are well on the way to being a bro. Continue to follow the path and you shall be rewarded my bro.")
     else 
         puts ("You got " + score.to_s + "/" + questions.length.to_s + "! You are a fucking legend! You have mastered the way of the bro and deserve all of the glory that Oden possesses. Beers are on me and let us bro down!")
+        $name_highscores << @name
+    end
+
+    legends = $name_highscores.to_s
+    File.write("highscores.txt", legends, mode: "a") 
+    
+    puts "\nDo you want to view the legendary Bro's who've hit the highscore?\nEnter 1 to see the highscores or 0 to exit."
+    view_highscores = gets.chomp()
+    if view_highscores.to_i == 1
+        p File.read("highscores.txt")
+    else 
+        exit(0)
     end
 end
 
 run_test(questions)
-
