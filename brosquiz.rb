@@ -1,4 +1,6 @@
 require_relative ("validators")
+require ("artii")
+require ("colorize")
 
 class Question 
     attr_accessor :prompt, :answer, :name
@@ -44,38 +46,41 @@ def play_game
 end
 
 def menu()
-    puts "Alright Bro, check out the options below:"
-    puts "Enter 1 to view the legendary Bro's who've hit the highscore"
-    puts "Enter 2 to play again"
-    puts "Enter 3 to exit."
+    puts "Alright Bro, check out the options below:".light_cyan.bold
+    puts "Enter 1 to view the legendary Bro's who've hit the highscore".white.bold
+    puts "Enter 2 to play again".white.bold
+    puts "Enter 3 to exit.".white.bold
     option = gets.chomp().to_i
     case option
     when 1
-        puts highscores()
+        puts highscores().light_blue.italic.bold
         menu()
     when 2 
         play_game()
     when 3
-        puts "Later Bro"
+        b = Artii::Base.new
+        puts b.asciify("Later Bro").light_cyan.bold
         exit(0)
     else
         puts " "
-        puts "You muppet, choose a number from 1-3."
+        puts "You muppet, choose a number from 1-3.".red.bold
         puts " "
         menu()
 end
 end
 
 system("clear")
-puts "Welcome to the Bro Challenge. A test of real Broship."
-puts "Reckon you're a bro? Prove it by completing this quiz."
-puts "Each correct answer is awarded 1 point." 
-puts "The total score will be revealed at the end."
-puts "Enter your name Bro"
+a = Artii::Base.new
+puts a.asciify("Bro Quiz").light_cyan.bold
+puts "Welcome to the Bro Quiz. A test of real Broship.".light_cyan.bold
+puts "Reckon you're a bro? Prove it by completing this quiz.".light_cyan.bold
+puts "Each correct answer is awarded 1 point.".white.bold
+puts "The total score will be revealed at the end.".white.bold
+puts "Enter your name Bro".green.bold
 @name = gets.chomp
 if @name.empty? == true
     puts " "
-    puts "You have to enter a name Bro"
+    puts "You have to enter a name Bro".red.bold
     @name = gets.chomp
 end
 
@@ -90,7 +95,7 @@ def run_test(questions)
         answer_valid = Validators.validate_answer_input(answer)
         if !answer_valid
                 puts " "
-                puts "Bro, how dumb are you? Enter a single letter A, B, or C to choose your answer."
+                puts "Bro, how dumb are you? Enter a single letter A, B, or C to choose your answer.".red.bold
                 puts " "
                 redo
         end
