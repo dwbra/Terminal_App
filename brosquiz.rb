@@ -47,23 +47,22 @@ def menu()
     puts "Alright Bro, check out the options below:"
     puts "Enter 1 to view the legendary Bro's who've hit the highscore"
     puts "Enter 2 to play again"
-    puts "Enter 0 to exit."
-    end_menu_option = gets.chomp().to_i
-    # end_menu_option_valid = Validators.validate_end_menu_option(end_menu_option)
-    # if !end_menu_option_valid
-    #         puts "Invalid input, please enter a number from 1-4"
-    # end
-    case end_menu_option
+    puts "Enter 3 to exit."
+    option = gets.chomp().to_i
+    case option
     when 1
         puts highscores()
+        menu()
     when 2 
         play_game()
     when 3
-        puts "Later Loser"
+        puts "Later Bro"
         exit(0)
-    else 
+    else
         puts " "
-        puts menu()
+        puts "You muppet, choose a number from 1-3."
+        puts " "
+        menu()
 end
 end
 
@@ -74,7 +73,11 @@ puts "Each correct answer is awarded 1 point."
 puts "The total score will be revealed at the end."
 puts "Enter your name Bro"
 @name = gets.chomp
-puts " "
+if @name.empty? == true
+    puts " "
+    puts "You have to enter a name Bro"
+    @name = gets.chomp
+end
 
 
 def run_test(questions)
