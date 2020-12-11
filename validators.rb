@@ -19,17 +19,17 @@ module Validators
             return false
         end
     end
-end
-
-def self.validate_end_menu(end_menu_option)
-    option = end_menu_option.to_i
-    if option == 1
-        return true
-    elsif option == 2 
-        return true
-    elsif option == 3
-        return true
-    else
-        return false
+    
+    def self.validate_end_menu_option(end_menu_option)
+        #concert input to integer
+        num_input = end_menu_option.to_i
+        # if integer == 1..4 return true
+        if num_input < 5
+            return true
+        # else return false 
+        else 
+            return false
+        end
     end
 end
+

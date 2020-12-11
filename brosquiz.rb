@@ -1,5 +1,4 @@
 require_relative ("validators")
-require_relative ("end_menu")
 
 class Question 
     attr_accessor :prompt, :answer, :name
@@ -50,6 +49,10 @@ def menu()
     puts "Enter 2 to play again"
     puts "Enter 0 to exit."
     end_menu_option = gets.chomp().to_i
+    # end_menu_option_valid = Validators.validate_end_menu_option(end_menu_option)
+    # if !end_menu_option_valid
+    #         puts "Invalid input, please enter a number from 1-4"
+    # end
     case end_menu_option
     when 1
         puts highscores()
