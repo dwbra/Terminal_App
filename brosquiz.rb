@@ -1,4 +1,5 @@
 require_relative ("validators")
+require_relative ("end_menu")
 
 class Question 
     attr_accessor :prompt, :answer, :name
@@ -34,6 +35,34 @@ questions = [
 ]
 
 $name_highscores = []
+
+def highscores
+    File.read("highscores.txt")
+end
+
+def play_game
+    load "brosquiz.rb"
+end
+
+def menu()
+    puts "Alright Bro, check out the options below:"
+    puts "Enter 1 to view the legendary Bro's who've hit the highscore"
+    puts "Enter 2 to play again"
+    puts "Enter 0 to exit."
+    end_menu_option = gets.chomp().to_i
+    case end_menu_option
+    when 1
+        puts highscores()
+    when 2 
+        play_game()
+    when 3
+        puts "Later Loser"
+        exit(0)
+    else 
+        puts " "
+        puts menu()
+end
+end
 
 system("clear")
 puts "Welcome to the Bro Challenge. A test of real Broship."
@@ -78,20 +107,8 @@ def run_test(questions)
         File.write("highscores.txt", legends.join + "\n", mode: "a") 
     end
 
-    #Calling my highscores method from outside of the test method.
-    highscores()
-
-end
-
-#Highscores method to get user input and then if a user chooses display an external .txt file to show the player highscores. 
-def highscores
-    puts "\nDo you want to view the legendary Bro's who've hit the highscore?\nEnter 1 to see the highscores or 0 to exit."
-    view_highscores = gets.chomp()
-    if view_highscores.to_i == 1
-        puts File.read("highscores.txt")
-    else 
-        exit(0)
-    end
+    puts " "
+    puts menu()
 end
 
 run_test(questions)
