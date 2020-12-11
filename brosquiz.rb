@@ -1,3 +1,4 @@
+require_relative ("validators")
 
 class Question 
     attr_accessor :prompt, :answer, :name
@@ -34,6 +35,37 @@ questions = [
 
 $name_highscores = []
 
+def highscores
+    File.read("highscores.txt")
+end
+
+def play_game
+    load "brosquiz.rb"
+end
+
+def menu()
+    puts "Alright Bro, check out the options below:"
+    puts "Enter 1 to view the legendary Bro's who've hit the highscore"
+    puts "Enter 2 to play again"
+    puts "Enter 3 to exit."
+    option = gets.chomp().to_i
+    case option
+    when 1
+        puts highscores()
+        menu()
+    when 2 
+        play_game()
+    when 3
+        puts "Later Bro"
+        exit(0)
+    else
+        puts " "
+        puts "You muppet, choose a number from 1-3."
+        puts " "
+        menu()
+end
+end
+
 system("clear")
 puts "Welcome to the Bro Challenge. A test of real Broship."
 puts "Reckon you're a bro? Prove it by completing this quiz."
@@ -41,7 +73,11 @@ puts "Each correct answer is awarded 1 point."
 puts "The total score will be revealed at the end."
 puts "Enter your name Bro"
 @name = gets.chomp
-puts " "
+if @name.empty? == true
+    puts " "
+    puts "You have to enter a name Bro"
+    @name = gets.chomp
+end
 
 
 def run_test(questions)
@@ -51,6 +87,13 @@ def run_test(questions)
     for question in questions
         puts question.prompt
         answer = gets.chomp()
+        answer_valid = Validators.validate_answer_input(answer)
+        if !answer_valid
+                puts " "
+                puts "Bro, how dumb are you? Enter a single letter A, B, or C to choose your answer."
+                puts " "
+                redo
+        end
         system("clear")
         if answer == question.answer
             score += 1
@@ -70,20 +113,8 @@ def run_test(questions)
         File.write("highscores.txt", legends.join + "\n", mode: "a") 
     end
 
-    #Calling my highscores method from outside of the test method.
-    highscores()
-
-end
-
-#Highscores method to get user input and then if a user chooses display an external .txt file to show the player highscores. 
-def highscores
-    puts "\nDo you want to view the legendary Bro's who've hit the highscore?\nEnter 1 to see the highscores or 0 to exit."
-    view_highscores = gets.chomp()
-    if view_highscores.to_i == 1
-        puts File.read("highscores.txt")
-    else 
-        exit(0)
-    end
+    puts " "
+    puts menu()
 end
 
 run_test(questions)
