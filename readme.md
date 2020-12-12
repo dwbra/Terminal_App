@@ -45,3 +45,69 @@ The second feature involves keeping track of a users score. In the quiz method, 
 The third feature is the highscores method. To keep a range of user highscores, once a player reaches over a score of 8+ their name will be pushed into a special array. This array will then be written into a .txt file in the root directory of the application. This .txt file will store all of the highscore player names and then be able to be called upon to read and present the highscores to users upon the request. 
 
 The forth feature will be a method to trigger users to be able to play again. This will be an independent method that gets called in a menu of options. This independent menu method will present users with a range of choices. To either see the highscores, which would trigger the highscores method, to play the game again which would trigger a seperate method, or a simple exit with an output message. 
+
+## Diagram Flowchart
+### Develop a diagram which describes the control flow of your application.
+![Terminal_App](Terminal_App.jpg)
+
+## Implementation Plan
+### Develop an implementation plan which:
+### - outlines how each feature will be implemented and a checklist of tasks for each feature
+### - prioritise the implementation of different features, or checklist items within a feature
+### - provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
+
+### Utilise a suitable project management platform to track this implementation plan
+
+### > Your checklists for each feature should have at least 5 items.
+
+Feature Implementation #1 - The Quiz
+The Quiz is the main method of the program. I will create a Questions Class to store the users name, questions and answers. The attributes will have to be able to be accessed outside of the class and will be labeled with the correct permissions. The checklist for this method is the below.
+- Have a class that initializes at least two objects, prompts and answers. 
+- Have a class that has correct attr persmissions 
+- Have an array of questions stored in the program
+- Create a range of instance objects to pass the questions from the array into
+- Write the questions for the quiz
+
+Feature Implmentation #2 - The Answer & Score Validation
+It is imperative for the success of the application that the answers are compared correctly against the user input. It is also crucial that once this input has been deemed correct user input, that depending on their answer if correct their overall score is increased. 
+- Have a for loop to iterate through the questions
+- Have a variable for score
+- Have a variable for answer
+- Have a validation test for the answer
+- Use conditional operators to dislay different messages based on the users score
+
+Feature Implementation #3 - The Highscore & End Menu 
+Once a user completes the game, it is important to show the user a range of options to select from. The best way to do this will be using a case loop. The incorporation of the highscore and conditional operaters will play a key role in pushing the top user scores across into the global variable and eventually into the .txt file. The menu will then contain a series of smaller methods, 1. that will read the highscores.txt file and puts it to the screen for the user and then redisplays the menu options, 2. that will replay the game from the start and 3. that will exit the termainal application.
+- Create a global variable to store the user highscore in
+- Push the user highscore into the highscore.txt file 
+- Create the highscores display method
+- Crete the play again method
+- Create a case loop to run through the menu options method. 
+
+## Software Docs
+### Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
+
+I've created a terminal script called install-run.sh. 
+The user just needs to cd into the assignment directory and then run this file from their terminal.
+This file will firstly install bundler on the users local machine. Then it will run bundle install and download all of the necessary gems required to run the application. Finally it will launch the program brosquiz.rb as the last command.
+
+Hard Steps to install the application would be:
+1. Install Ruby on your machine
+2. Install Bundler Gem
+3. Run Bundler Install to get all of the gems associated with the application
+
+Dependencies include:
+
+- Ruby 
+
+To install and run 
+- `$ gem install bundler` 
+- `$ bundle install`
+- `$ ruby index.rb`
+
+gem `$ gem install colorize`
+gem `$ gem install artii`
+gem `$ gem install tty-prompt'
+gem `$ gem install rspec`
+
+You can run this from either PC, Mac or Linux systems. 
