@@ -19,17 +19,5 @@ module Validators
             return false
         end
     end
-
-    # def self.validate_option_input(option)
-    #     #concert input to integer
-    #     num_input = option.to_i
-    #     # if integer == 1..4 return true
-    #     if num_input < 3
-    #         return true
-    #     # else return false 
-    #     else 
-    #         return false
-    #     end
-    # end
 end
 

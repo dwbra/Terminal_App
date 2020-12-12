@@ -1,6 +1,7 @@
 require_relative ("validators")
 require ("artii")
 require ("colorize")
+require ("rspec")
 
 class Question 
     attr_accessor :prompt, :answer, :name
