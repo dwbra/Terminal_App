@@ -12,7 +12,7 @@ class Question
     end
 end
 
-p1 = "You're at a lame house party so your bro can tune a chick. How do you wingman him? \n(a)Chat shit to her, then sneak off once his wasted.\n(b)Get wasted and tune her friend\n(c)Get wasted and not care"
+p1 = "You're at a lame house party so your bro can tune a chick. How do you wingman him? \n(a)Chat shit to her, then sneak off once his wasted\n(b)Get wasted and tune her friend\n(c)Get wasted and tune her"
 p2 = "You're bro is moving houses and needs a hand, he asks if you want anything in return. You answer with? \n(a)Noze beers down the local all night on him\n(b)A couple cases of the most expensive craft beer money can buy\n(c)Him to dress up as partyboy from Jackass at the next house party"
 p3 = "You've been asked to be your bros best man. He asks you to keep the speech tame. You either? \n(a)Write him off for the dog he is\n(b)Write a flowery speech of crap to impress the bridesmaids\n(c)Write a speech makimg him out to be the biggest legend of all time only at the last minute to tell the darkest story of his past and potentially jepordise the entire wedding."
 p4 = "You're at kickons and your bro has passed out. You either? \n(a)Shave his eyebrows half off \n(b)Shave his head completely \n(c)Put his hand in a container of luke warm water"
