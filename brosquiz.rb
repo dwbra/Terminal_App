@@ -79,7 +79,8 @@ puts "Each correct answer is awarded 1 point.".white.bold
 puts "The total score will be revealed at the end.".white.bold
 puts "Enter your name Bro".green.bold
 @name = gets.chomp
-if @name.empty? == true
+name_valid = Validators.validate_name_input(@name)
+if !name_valid
     puts " "
     puts "You have to enter a name Bro".red.bold
     @name = gets.chomp

@@ -13,12 +13,11 @@ describe 'Validators.validate_answer_input' do
     end
 end
 
-# describe 'index.rb' do
-#     it 'does stuff' do
-#         expect(hello()).to eq("hello world")
-#     end
-    
-#     xit "does something else" do
-    
-#     end
-# end
+describe 'Validators.validate_name_input(@name)' do
+    it 'check if any input is received' do
+        expect(Validators.validate_name_input("a")).to eq(true)
+        expect(Validators.validate_name_input("Daniel")).to eq(true)
+
+        expect(Validators.validate_name_input("")).to eq(false)
+    end
+end

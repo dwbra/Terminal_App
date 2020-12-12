@@ -19,5 +19,14 @@ module Validators
             return false
         end
     end
+
+    def self.validate_name_input(name)
+        n = name.to_s
+        if n.empty?
+            return false
+        else 
+            return true
+        end
+    end
 end
 
