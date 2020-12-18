@@ -12,16 +12,16 @@ class Question
     end
 end
 
-p1 = "You're at a lame house party so your bro can tune a chick. How do you wingman him? \n(a)Chat shit to her, then sneak off once his wasted\n(b)Get wasted and tune her friend\n(c)Get wasted and tune her"
-p2 = "You're bro is moving houses and needs a hand, he asks if you want anything in return. You answer with? \n(a)Noze beers down the local all night on him\n(b)A couple cases of the most expensive craft beer money can buy\n(c)Him to dress up as partyboy from Jackass at the next house party"
-p3 = "You've been asked to be your bros best man. He asks you to keep the speech tame. You either? \n(a)Write him off for the dog he is\n(b)Write a flowery speech of crap to impress the bridesmaids\n(c)Write a speech makimg him out to be the biggest legend of all time only at the last minute to tell the darkest story of his past and potentially jepordise the entire wedding."
+p1 = "You're at a lame house party so your bro can tune a chick. How do you wingman him? \n(a)Chat deep life smoke to her, then sneak off once his wasted\n(b)Get wasted and tune her friend\n(c)Stick around at the party to drink all the expensive booze"
+p2 = "You're bro is moving houses and needs a hand, he asks if you want anything in return. You answer with? \n(a)When you move next his help all day\n(b)A couple cases of the most expensive craft beer money can buy\n(c)Him to wear something riduclious to the next house party"
+p3 = "You've been asked to be your bros best man. He asks you to keep the speech tame. You either? \n(a)Write him off for the dog he is\n(b)Write a flowery speech to impress the bridesmaids\n(c)Praise him as an absolute legend in the hopes he will do the same for you someday"
 p4 = "You're at kickons and your bro has passed out. You either? \n(a)Shave his eyebrows half off \n(b)Shave his head completely \n(c)Put his hand in a container of luke warm water"
-p5 = "Your down the local tav, its packed, your smashed and your bros hot ex misses asks you to take her home. You tell her? \n(a)Lets get out of here, only to pass out in the cab on the way\n(b)Lets get out of here, only to wake up on the toliet in the tav still an hour later \n(c)Lets get out of here, only to wake up next to a Zinger Box and 50 missed calls from your bros."
-p6 = "You've been hitting the beers all day at the races, you either? \n(a)Get a cab 2hrs away to a birds house and dog the bros \n(b)Hit the city with the bros \n(c)Get kicked out by 12am and have to drink in the local pub by yourself"
-p7 = "You're out in the surf, you see your mate on the inside but its the wave of the day. You either? \n(a)Drop in on the dog and shred it \n(b)Drop in on him just to tackle him off it \n(c) Drop in on him and partywave it"
-p8 = "You're on a Euro trip, your out and your bro is flogged, you either? \n(a)Send him home in a questionable Taxi \n(b)Get him a shot and tell him to suck it up \n(c)Get him rolling on mollywater then party till sunrise together"
+p5 = "Your down the local tav, its packed, your smashed and your bros hot ex misses asks you if you wanna share a cab home. You tell her? \n(a)Lets get out of here, only to pass out in the cab on the way\n(b)Lets get out of here, only to wake up on the toliet in the tav still an hour later \n(c)Lets get out of here, only to wake up next to a Zinger Box and 50 missed calls from your bros."
+p6 = "You've been hitting the beers all day at the races, you either? \n(a)Get a cab 2hrs away to kick on with a group of randoms you just met \n(b)Hit the city with the bros \n(c)Get kicked out by 12am and have to drink in the local pub by yourself"
+p7 = "You're out in the surf, you see your mate on the inside but its the wave of the day. You either? \n(a)Drop in on the dog and shred it \n(b)Drop in on the dog just to tackle him off it \n(c) Drop in on him and partywave it"
+p8 = "You're on a Euro trip, your out and your bro is flogged, you either? \n(a)Send him home in a questionable Taxi \n(b)Get him a shot and tell him to suck it up \n(c)Leave the club, go get sleezy kebabs and walk around for hours before finding the hostel"
 p9 = "You're bro gets himself into a fight with some muppet at the local tav. You either? \n(a)Let him go one on one and see how it pans out \n(b)Come in from the side and check the bloke \n(c)Let your bro get a beatdown, his needs checking."
-p10 = "Your bro gets with a bird you've been tuning. You either? \n(a)Give him a swift uppercut, followed by a frothdog and move on. \n(b)Laugh, she was minging anyway. \n(c)Wait until its just her and then tell her his got an STD." 
+p10 = "Your bro gets with a bird you've been tuning. You either? \n(a)Give him a swift uppercut, followed by a frothdog and move on. \n(b)Laugh, she was average anyway. \n(c)Do nothing, whose got time for that level of drama" 
 
 questions = [
     Question.new(p1, "b"),
